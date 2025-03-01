@@ -9,7 +9,7 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="layout">
+    <div className="demo-layout">
       <Header />
       <main className="content">{children}</main>
       <Footer />

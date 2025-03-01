@@ -8,6 +8,40 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+html,
 body {
+  height: 100%;
   font-family: sans-serif;
+  margin: 0;
+}
+
+.page__heading {
+  text-align: center;
+}
+
+.page__sub-heading {
+  text-align: center;
+}
+
+.page__nav {
+  background-color: #000;
+  padding: 2rem;
+}
+.page__nav-list {
+  all: unset;
+  display: flex;
+  justify-content: center;
+}
+.page__nav-list-item {
+}
+.page__nav-link {
+  color: rgb(255, 255, 255);
+  background-color: #272727;
+  padding: 1rem;
+  border: 1px solid #fff;
+  display: block;
+  text-decoration: none;
+  &:hover {
+    background-color: #1d1d1d;
+  }
 }

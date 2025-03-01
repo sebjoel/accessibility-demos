@@ -18,10 +18,13 @@ const ProductsDo: React.FC<ProductListProps> = ({ products }) => {
     }, 1000); // Simulerar en laddningstid på 1 sekund
   };
   return (
-    <div className="products">
+    <section className="products">
       <div className="products__container">
+        <h2 className="products__label products__label--green">Better</h2>
         <div className="products__inner">
-          <h3 id="products">Products</h3>
+          <h3 className="products__heading" id="products">
+            Products
+          </h3>
           <ul
             aria-live="polite"
             className="products__list"
@@ -35,20 +38,22 @@ const ProductsDo: React.FC<ProductListProps> = ({ products }) => {
                   src={ProductImage}
                   alt={""}
                 />
-                <h4>{product.name}</h4>
-                <p>{product.description}</p>
-                <p>{product.price} SEK</p>
-                <a className="products__link" href="#">
-                  Read more
-                  <span className="a11y-hidden">about {product.name}</span>
-                </a>
+                <div className="products__info">
+                  <h4>{product.name}</h4>
+                  <p>{product.description}</p>
+                  <p>{product.price} SEK</p>
+                  <a className="products__link" href="#">
+                    Read more
+                    <span className="a11y-hidden">about {product.name}</span>
+                  </a>
+                </div>
               </li>
             ))}
           </ul>
         </div>
-        <div aria-live="polite" className="products__load-more">
+        <div role="status" aria-live="polite" className="products__load-more">
           {visibleCount >= products.length && <p>No more products to show</p>}
-          {isLoading && <p>Loading more products</p>}
+          {isLoading && <p>Loading more products...</p>}
         </div>
         {visibleCount < products.length && (
           <div className="products__load-more">
@@ -58,7 +63,7 @@ const ProductsDo: React.FC<ProductListProps> = ({ products }) => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

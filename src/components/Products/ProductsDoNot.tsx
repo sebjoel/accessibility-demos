@@ -20,6 +20,7 @@ const ProductsDoNot: React.FC<ProductListProps> = ({ products }) => {
   return (
     <div className="products">
       <div className="products__container">
+        <h2 className="products__label products__label--red">Bad</h2>
         <div className="products__inner">
           <div className="products__list">
             {products.slice(0, visibleCount).map((product) => (
@@ -30,12 +31,14 @@ const ProductsDoNot: React.FC<ProductListProps> = ({ products }) => {
                   src={ProductImage}
                   alt={""}
                 />
-                <h4>{product.name}</h4>
-                <p>{product.description}</p>
-                <p>{product.price} SEK</p>
-                <a className="products__link" href="#">
-                  Read more
-                </a>
+                <div className="products__info">
+                  <h4>{product.name}</h4>
+                  <p>{product.description}</p>
+                  <p>{product.price} SEK</p>
+                  <a className="products__link" href="#">
+                    Read more
+                  </a>
+                </div>
               </div>
             ))}
           </div>

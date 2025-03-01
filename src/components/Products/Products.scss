@@ -1,9 +1,24 @@
 .products {
   background: #e6e6e6;
   padding: 1rem;
+  margin: 0 0 3rem 0;
   &__container {
     margin: 0 auto;
     max-width: 1200px;
+  }
+  &__label {
+    border: 1px dashed currentcolor;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    &--red {
+      color: rgb(146, 3, 3);
+    }
+    &--green {
+      color: rgb(6, 95, 6);
+    }
+  }
+  &__heading {
+    font-size: 2em;
   }
   &__list {
     all: unset;
@@ -14,13 +29,18 @@
   &__item {
     all: unset;
     background-color: #fff;
-    border-radius: 3px;
-    padding: 1rem;
+    border-radius: 8px;
     box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
   }
   &__image {
     width: 100%;
     height: auto;
+    display: block;
+  }
+  &__info {
+    padding: 1rem;
   }
   &__load-more {
     margin: 1rem auto;
@@ -34,6 +54,12 @@
     display: inline-block;
     padding: 1rem;
     cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
 
     &:hover {
       background-color: rgb(42, 116, 93);
