@@ -1,8 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "./Footer.scss";
 
-type FooterProps = {};
+type FooterProps = {
+  ariaLabel?: string;
+};
 
-export default function Footer({}: FooterProps) {
-  return <footer className="demo-footer">Footer</footer>;
+export default function Footer({ ariaLabel }: FooterProps) {
+  return <footer className="demo-footer" aria-label={ariaLabel}>Footer</footer>;
 }

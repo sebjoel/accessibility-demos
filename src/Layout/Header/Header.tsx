@@ -1,13 +1,16 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "./Header.scss";
+import Link from "next/link";
 
-type HeaderProps = {};
+type HeaderProps = {
+  ariaLabel?: string;
+};
 
-export default function Header({}: HeaderProps) {
+export default function Header({ ariaLabel }: HeaderProps) {
   return (
-    <header className="demo-header">
+    <header className="demo-header" aria-label={ariaLabel}>
       <div className="demo-header__heading">
-        <a href="/">Demo</a>
+        <Link href="/">Demo</Link>
       </div>
     </header>
   );

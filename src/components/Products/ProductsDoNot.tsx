@@ -35,7 +35,7 @@ const ProductsDoNot: React.FC<ProductListProps> = ({ products }) => {
                   <h4>{product.name}</h4>
                   <p>{product.description}</p>
                   <p>{product.price} SEK</p>
-                  <a className="products__link" href="#">
+                  <a className="products__link" href={`/products/${product.id}`}>
                     Read more
                   </a>
                 </div>
